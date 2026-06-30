@@ -1,0 +1,11 @@
+resilience4j:
+  circuitbreaker:
+    instances:
+      inventoryService:
+        sliding-window-type: COUNT_BASED
+        sliding-window-size: 6
+        failure-rate-threshold: 50
+        wait-duration-in-open-state: 5000
+        permitted-number-of-calls-in-half-open-state: 3
+        slow-call-duration-threshold: 200
+        slow-call-rate-threshold: 75
